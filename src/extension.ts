@@ -1,19 +1,30 @@
 'use strict';
-import * as vscode from 'vscode';
+import { window, ExtensionContext, StatusBarAlignment, commands, workspace } from 'vscode';
+import { StatusBarUI } from './StatusbarUi';
+import { WorkshopFilesOpened } from './workshopFilesOpened';
 
-export function activate(context: vscode.ExtensionContext) {
-    // vscode.window.showInformationMessage('View structure working');
-    let disposable = vscode.commands.registerCommand('extension.cmd', () => {
-        console.log(vscode.workspace);
-        if(vscode.workspace.textDocuments.length) {
-            vscode.window.showInformationMessage(`Workspace has ${vscode.workspace.textDocuments.length === 1 ? vscode.workspace.textDocuments.length + ' file': vscode.workspace.textDocuments.length + ' files'}`);
-        } else {
-            vscode.window.showInformationMessage('Workspace has no file');
-        }        
-    });
-    context.subscriptions.push(disposable);
+import { InitialActiveStage } from "./initialStage";
+
+export function activate(context: ExtensionContext) {
+
+    context.subscriptions.push(commands
+        .registerCommand('extension.cmd', (fileUri) => {
+            workspace.saveAll().then(() => {
+                let text = WorkshopFilesOpened.opened();
+                window.showInformationMessage(text);
+                StatusBarUI.Init();
+            });
+        })
+    );
+
+    context.subscriptions.push(window
+        .onDidChangeActiveTextEditor(() => {
+            if (window.activeTextEditor === undefined) return;
+            else StatusBarUI.Init();
+        })
+    );
 }
 
 export function deactivate() {
-    console.log('deactivate');
+    console.log('deactivate editor');
 }
