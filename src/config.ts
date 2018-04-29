@@ -5,7 +5,7 @@ import { workspace } from 'vscode';
 export class Config {
 
     public static get configuration() {
-        return workspace.getConfiguration('fileOpened.settings');
+        return workspace.getConfiguration('fileOpened');
     }
 
     public static getSettings<T>(val: string): T {
@@ -14,5 +14,9 @@ export class Config {
 
     public static get getAlertOnLoad(): string {
         return Config.getSettings<string>('AlertOnLoad');
+    }
+
+    public static get getStatusBarOnLoad(): string {
+        return Config.getSettings<string>('StatusbarOnLoad');
     }
 }

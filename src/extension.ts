@@ -1,18 +1,16 @@
 'use strict';
 import { window, ExtensionContext, commands, workspace } from 'vscode';
-import { Config } from './config';
 import { StatusBarUI } from './StatusbarUi';
 import { FilesOpened } from './fileOpened';
 
 export function activate(context: ExtensionContext) {
 
-    console.log("fileOpened.settings.AlertOnLoad", Config.getAlertOnLoad);
+    FilesOpened.init();
 
-    StatusBarUI.Init();
     context.subscriptions.push(commands
         .registerCommand('extension.fileOpened.go', (fileUri) => {
             workspace.saveAll().then(() => {
-                let text = FilesOpened.opened();
+                let text = FilesOpened.go();
                 window.showInformationMessage(text);
                 StatusBarUI.Init();
             });
