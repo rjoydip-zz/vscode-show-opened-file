@@ -2,17 +2,17 @@
 import { window, ExtensionContext, commands, workspace } from 'vscode';
 import { Config } from './config';
 import { StatusBarUI } from './StatusbarUi';
-import { WorkshopFilesOpened } from './workshopFilesOpened';
+import { FilesOpened } from './fileOpened';
 
 export function activate(context: ExtensionContext) {
 
-    console.log("workshopFilesOpened.settings.AlertOnLoad", Config.getAlertOnLoad);
+    console.log("fileOpened.settings.AlertOnLoad", Config.getAlertOnLoad);
 
     StatusBarUI.Init();
     context.subscriptions.push(commands
-        .registerCommand('extension.workshopFilesOpened.go', (fileUri) => {
+        .registerCommand('extension.fileOpened.go', (fileUri) => {
             workspace.saveAll().then(() => {
-                let text = WorkshopFilesOpened.opened();
+                let text = FilesOpened.opened();
                 window.showInformationMessage(text);
                 StatusBarUI.Init();
             });
@@ -29,5 +29,5 @@ export function activate(context: ExtensionContext) {
 
 export function deactivate() {
     console.log('deactivate editor');
-    window.showInformationMessage("Deactivate");
+    window.showInformationMessage("Deactivate File Opened Extension");
 }

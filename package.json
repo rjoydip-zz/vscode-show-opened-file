@@ -40,21 +40,21 @@
     "homepage": "https://github.com/rjoydip/file-opened",
     "contributes": {
         "commands": [{
-            "command": "extension.workshopFilesOpened.go",
-            "title": "Workshop files opened"
+            "command": "extension.fileOpened.go",
+            "title": "File opened"
         }]
     },
     "keybindings": [{
-        "command": "extension.workshopFilesOpened.go",
-        "key": "alt+W O",
+        "command": "extension.fileOpened.go",
+        "key": "alt+w o",
         "when": "editorTextFocus",
         "mac": "cmd+W O"
     }],
     "menus": {},
     "configuration": {
-        "title": "Workshop Files Opened",
+        "title": "File Opened",
         "properties": {
-            "workshopFilesOpened.settings.AlertOnLoad": {
+            "fileOpened.settings.AlertOnLoad": {
                 "type": [
                     "boolean"
                 ],
@@ -65,7 +65,7 @@
     },
     "announcement": {
         "onVersion": "0.0.1",
-        "message": "WorkshopFilesOpened Update: Mounting a directory is added"
+        "message": "File Opened Update: Mounting a directory is added"
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

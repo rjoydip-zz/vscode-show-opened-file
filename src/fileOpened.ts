@@ -1,6 +1,6 @@
 import { workspace } from 'vscode';
 
-export class WorkshopFilesOpened {
+export class FilesOpened {
     static opened() {
         let text = '';
         const textDoc = workspace.textDocuments.filter(doc => doc.uri.scheme === 'file');
