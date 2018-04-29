@@ -1,5 +1,3 @@
-'use strict';
-
 import { workspace } from 'vscode';
 
 export class Config {

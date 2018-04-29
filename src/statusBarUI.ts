@@ -1,5 +1,4 @@
 import { StatusBarItem, window, StatusBarAlignment } from 'vscode';
-
 import { ShowOpenedFile } from "./showOpenedFile";
 
 export class StatusBarUI {
@@ -8,16 +7,15 @@ export class StatusBarUI {
 
     private static get statusbar() {
         if (!StatusBarUI._statusBarItem) {
-            StatusBarUI._statusBarItem = window
-                .createStatusBarItem(StatusBarAlignment.Right, 100);
+            StatusBarUI._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right, 100);
             this.statusbar.show();
         }
 
         return StatusBarUI._statusBarItem;
     }
 
-    static Init() {
-        StatusBarUI.Working('loading...');
+    public static Init() {
+        StatusBarUI.working('loading...');
         setTimeout(function () {
             let text = ShowOpenedFile.go();
             StatusBarUI.statusbar.text = `$(file) ${text}`;
@@ -26,7 +24,7 @@ export class StatusBarUI {
         }, 1000);
     }
 
-    static Working(workingMsg: string = 'Working on it...') {
+    private static working(workingMsg: string = 'Working on it...') {
         StatusBarUI.statusbar.text = `$(pulse) ${workingMsg}`;
         StatusBarUI.statusbar.tooltip = 'In case if it takes long time, try to close all browser window.';
     }
