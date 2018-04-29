@@ -1,4 +1,4 @@
-# view-structure README
+# workshop-files-opened
 
 This is the README for your extension "view-project-structure". After writing up a brief description, we recommend including the following sections.
 

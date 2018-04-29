@@ -1,13 +1,17 @@
-import { window, StatusBarAlignment, workspace } from 'vscode';
+import { workspace } from 'vscode';
 
 export class WorkshopFilesOpened {
     static opened() {
         let text = '';
-        if (workspace.textDocuments.length) {
-            text = `Workspace has ${workspace.textDocuments.length === 1 ? workspace.textDocuments.length + ' file opened' : workspace.textDocuments.length + ' files opened'}`;
+        const textDoc = workspace.textDocuments.filter(doc => doc.uri.scheme === 'file');
+        const textDocLen = textDoc.length;
+
+        if (textDocLen) {
+            text = `${textDocLen === 1 ? textDocLen + ' file opened' : textDocLen + ' files opened'}`;
         } else {
-            text = 'Workspace has no file opened';
+            text = 'No file opened';
         }
+
         return text;
     }
 }

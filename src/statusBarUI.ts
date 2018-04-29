@@ -1,4 +1,4 @@
-import { StatusBarItem, window, StatusBarAlignment, workspace } from 'vscode';
+import { StatusBarItem, window, StatusBarAlignment } from 'vscode';
 
 import { WorkshopFilesOpened } from "./workshopFilesOpened";
 
@@ -20,8 +20,8 @@ export class StatusBarUI {
         StatusBarUI.Working('loading...');
         setTimeout(function () {
             let text = WorkshopFilesOpened.opened();
-            StatusBarUI.statusbar.text = `${text}`;
-            StatusBarUI.statusbar.command = 'extension.cmd';
+            StatusBarUI.statusbar.text = `$(file) ${text}`;
+            StatusBarUI.statusbar.command = 'extension.workshopFilesOpened.go';
             StatusBarUI.statusbar.tooltip = text;
         }, 1000);
     }
