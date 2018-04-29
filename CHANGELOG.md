@@ -1,7 +1,7 @@
 # Change Log
 
-All notable changes to the "workshop-files-opened" extension will be documented in this file.
+All notable changes to the `files-opened` extension will be documented in this file.
 
 ## [Unreleased]
 
-    - Initial release
+    - First release on github. Not in vscode marketplace
