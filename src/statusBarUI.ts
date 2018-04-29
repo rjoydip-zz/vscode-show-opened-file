@@ -1,6 +1,6 @@
 import { StatusBarItem, window, StatusBarAlignment } from 'vscode';
 
-import { FilesOpened } from "./fileOpened";
+import { ShowOpenedFile } from "./showOpenedFile";
 
 export class StatusBarUI {
 
@@ -19,9 +19,9 @@ export class StatusBarUI {
     static Init() {
         StatusBarUI.Working('loading...');
         setTimeout(function () {
-            let text = FilesOpened.opened();
+            let text = ShowOpenedFile.go();
             StatusBarUI.statusbar.text = `$(file) ${text}`;
-            StatusBarUI.statusbar.command = 'extension.fileOpened.go';
+            StatusBarUI.statusbar.command = 'extension.showOpenedFile.go';
             StatusBarUI.statusbar.tooltip = text;
         }, 1000);
     }

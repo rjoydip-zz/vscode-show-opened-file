@@ -1,16 +1,16 @@
 'use strict';
 import { window, ExtensionContext, commands, workspace } from 'vscode';
 import { StatusBarUI } from './StatusbarUi';
-import { FilesOpened } from './fileOpened';
+import { ShowOpenedFile } from './showOpenedFile';
 
 export function activate(context: ExtensionContext) {
 
-    FilesOpened.init();
+    ShowOpenedFile.init();
 
     context.subscriptions.push(commands
-        .registerCommand('extension.fileOpened.go', (fileUri) => {
+        .registerCommand('extension.showOpenedFile.go', (fileUri) => {
             workspace.saveAll().then(() => {
-                let text = FilesOpened.go();
+                let text = ShowOpenedFile.go();
                 window.showInformationMessage(text);
                 StatusBarUI.Init();
             });
@@ -26,6 +26,5 @@ export function activate(context: ExtensionContext) {
 }
 
 export function deactivate() {
-    console.log('deactivate editor');
-    window.showInformationMessage("Deactivate File Opened Extension");
+    window.showInformationMessage("Deactivate Show Opened File Extension");
 }

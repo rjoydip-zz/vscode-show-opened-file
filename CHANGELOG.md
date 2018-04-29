@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the `files-opened` extension will be documented in this file.
+All notable changes to the `Show Opened File` extension will be documented in this file.
 
 ## [Unreleased]
 

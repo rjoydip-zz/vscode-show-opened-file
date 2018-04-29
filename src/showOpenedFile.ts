@@ -2,15 +2,15 @@ import { workspace, window } from 'vscode';
 import { StatusBarUI } from './statusBarUI';
 import { Config } from './config';
 
-export class FilesOpened {
+export class ShowOpenedFile {
 
     public static init() {
 
-        console.log("fileOpened.AlertOnLoad", Config.getAlertOnLoad);
-        console.log("fileOpened.StatusbarOnLoad", Config.getStatusBarOnLoad);
+        console.log("showOpenedFile.AlertOnLoad", Config.getAlertOnLoad);
+        console.log("showOpenedFile.StatusbarOnLoad", Config.getStatusBarOnLoad);
 
         if(Config.getAlertOnLoad) {
-            window.showInformationMessage('File opened working'); 
+            window.showInformationMessage('Show Opened File working'); 
         }
     
         if(Config.getStatusBarOnLoad) {

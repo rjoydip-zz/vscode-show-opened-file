@@ -1,6 +1,6 @@
 {
-    "name": "file-opened",
-    "displayName": "File Opened",
+    "name": "vscode-show-opened-file",
+    "displayName": "Show Opened File",
     "description": "Show number of file opned in workshop",
     "version": "0.0.2",
     "publisher": "rjoydip",
@@ -16,7 +16,7 @@
         "Other"
     ],
     "keywords": [
-        "file openened"
+        "file opened"
     ],
     "preview": false,
     "galleryBanner": {
@@ -30,30 +30,30 @@
     "license": "MIT",
     "icon": "",
     "bugs": {
-        "url": "https://github.com/rjoydip/file-opened.git/issues",
+        "url": "https://github.com/rjoydip/vscode-show-opened-file.git/issues",
         "email": "joydipand@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/rjoydip/file-opened.git"
+        "url": "https://github.com/rjoydip/vscode-show-opened-file.git"
     },
-    "homepage": "https://github.com/rjoydip/file-opened",
+    "homepage": "https://github.com/rjoydip/vscode-show-opened-file",
     "contributes": {
         "commands": [{
-            "command": "extension.fileOpened.go",
-            "title": "File opened"
+            "command": "extension.showOpenedFile.go",
+            "title": "Show Opened File"
         }],
         "configuration": {
             "title": "File Opened",
             "properties": {
-                "fileOpened.AlertOnLoad": {
+                "showOpenedFile.AlertOnLoad": {
                     "type": [
                         "boolean"
                     ],
                     "default": true,
                     "description": "Show statusbar alert when editor loads"
                 },
-                "fileOpened.StatusbarOnLoad": {
+                "showOpenedFile.StatusbarOnLoad": {
                     "type": [
                         "boolean"
                     ],
@@ -64,7 +64,7 @@
         }
     },
     "keybindings": [{
-        "command": "extension.fileOpened.go",
+        "command": "extension.showOpenedFile.go",
         "key": "Alt+o",
         "mac": "cmd+o"
     }],

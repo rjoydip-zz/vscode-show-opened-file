@@ -5,7 +5,7 @@ import { workspace } from 'vscode';
 export class Config {
 
     public static get configuration() {
-        return workspace.getConfiguration('fileOpened');
+        return workspace.getConfiguration('showOpenedFile');
     }
 
     public static getSettings<T>(val: string): T {

@@ -1,12 +1,12 @@
 # Settings
 
-* **`fileOpened.AlertOnLoad`:**
+* **`showOpenedFile.AlertOnLoad`:**
 
 Show statusbar alert after editor on load.
 
     - Default value is `true`.
 
-* **`fileOpened.StatusbarOnLoad`:**
+* **`showOpenedFile.StatusbarOnLoad`:**
 
 Show statusbar text after editor on load.
 

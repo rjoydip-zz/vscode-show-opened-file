@@ -1,4 +1,4 @@
-# file-opened
+# Show Opened File
 
 A simple vscode extension for show number of file opened in workshop.
 

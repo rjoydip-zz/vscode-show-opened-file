@@ -9,7 +9,7 @@ Inside of the `settings.json`, type following key-value pairs. By the way you'll
 
 ```json
 {
-    "fileOpened.AlertOnLoad": true, // default true
-    "fileOpened.StatusbarOnLoad": true, // default true
+    "showOpenedFile.AlertOnLoad": true, // default true
+    "showOpenedFile.StatusbarOnLoad": true, // default true
 }
 ```
