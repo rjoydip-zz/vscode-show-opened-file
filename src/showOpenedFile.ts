@@ -6,9 +6,6 @@ export class ShowOpenedFile {
 
     public static init() {
 
-        console.log("showOpenedFile.AlertOnLoad", Config.getAlertOnLoad);
-        console.log("showOpenedFile.StatusbarOnLoad", Config.getStatusBarOnLoad);
-
         if(Config.getAlertOnLoad) {
             window.showInformationMessage('Show Opened File working'); 
         }
